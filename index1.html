@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Her</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: lightpink;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #e94d58;
+            margin: 15px 0;
+        }
+
+        .gif {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-group {
+            margin-top: 50px;
+            position: relative;
+            height: 40px;
+        }
+
+        button {
+            width: 150px;
+            height: inherit;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px gray;
+            border: 2px solid #e94d58;
+        }
+
+        button.yes-btn {
+            background: #e94d58;
+        }
+
+        button.no-btn {
+            background: white;
+            color: #e94d58;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">I love you more than you love me?</h2>
+        <img class="gif" alt="gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDN2NXlzZG84bmxlNzMyOTVuZWJjcG1uNDhoY3cxeTQyYTh5NGxmMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LxuPCbE4XrH0wCXvWZ/giphy.webp" />
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.querySelector(".yes-btn");
+        const noBtn = document.querySelector(".no-btn");
+        const question = document.querySelector(".question");
+        const gif = document.querySelector(".gif");
+
+        yesBtn.addEventListener("click", () => {
+            question.innerHTML = "It's your special day baby Happy Birthday Gorgeous lots of kisses💚";
+            gif.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW1raGZubHV3ejl5eGI3MTlhNDBnY3BhZHEzdDlzeDQ0M2Z1bmprbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P1VHfCYElFTcQ/giphy.webp";
+            gif.removeEventListener("click", navigateToNextPage);
+            gif.style.cursor = "pointer";
+            gif.addEventListener("click", navigateToNextPage);
+        });
+        function navigateToNextPage() {
+            window.location.href = "index2.html";
+        }
+
+        noBtn.addEventListener("mouseover", () => {
+            const wrapper = document.querySelector(".wrapper");
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const noBtnRect = noBtn.getBoundingClientRect();
+
+            const maxX = wrapperRect.width - noBtnRect.width;
+            const maxY = wrapperRect.height - noBtnRect.height;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
