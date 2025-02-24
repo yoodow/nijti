@@ -6,7 +6,7 @@ const wrapper = document.querySelector(".wrapper");
 yesBtn.addEventListener("click", () => {
     const question = document.querySelector(".question");
     const gif = document.querySelector(".gif");
-    question.innerHTML = "It's your special day baby Happy Birthday Gorgeous lots of kisses💚";
+    question.innerHTML = "It's your special day baby Happy Birthday Gorgeous lots of kisses♥️";
     gif.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW1raGZubHV3ejl5eGI3MTlhNDBnY3BhZHEzdDlzeDQ0M2Z1bmprbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P1VHfCYElFTcQ/giphy.webp";
 });
 
